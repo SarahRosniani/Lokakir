@@ -116,6 +116,30 @@ h6 {
   }
 }
 
+/* header  */
+
+#header1 {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 15px 0;
+}
+
+#header1.header-scrolled,
+#header1.header-inner-pages {
+  background: rgba(253, 253, 253, 0.8);
+}
+
+#header1 .logo {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -142,14 +166,32 @@ h6 {
   align-items: center;
 }
 
+#header .logo1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
 #header .logo a {
   color: #fff;
 }
-
 #header .logo a span {
   color: #fff;
   display: flex;
   align-items: center;
+}
+
+#header .logo1 a span {
+  color: #333;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
 
 #header .logo img {
@@ -174,6 +216,22 @@ h6 {
 /*--------------------------------------------------------------
 #  Get Startet Button
 --------------------------------------------------------------*/
+.get-started-btn1 {
+  color: #333;
+  border-radius: 15px;
+  padding: 7px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  border: 2px solid #42A5F5;
+}
+
+.get-started-btn1:hover {
+  background: #42A5F5;
+  color: #343a40;
+}
+
 .get-started-btn {
   color: #fff;
   border-radius: 15px;
@@ -224,6 +282,118 @@ h6 {
 /**
 * Desktop Navigation 
 */
+
+.navbar1 {
+  padding: 0;
+}
+
+.navbar1 ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: right;
+}
+
+.navbar1 li {
+  position: relative;
+}
+
+.navbar1 a,
+.navbar1 a:focus {
+  display: flex;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar1 a i,
+.navbar1 a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 15px;
+}
+
+.navbar1 a:hover,
+.navbar1 .active,
+.navbar1 .active:focus,
+.navbar1 li:hover>a {
+  color: #42A5F5;
+}
+
+.navbar1 .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.navbar1 .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar1 .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: none;
+  color: #151515;
+  font-weight: 400;
+}
+
+.navbar1 .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar1 .dropdown ul a:hover,
+.navbar1 .dropdown ul .active:hover,
+.navbar1 .dropdown ul li:hover>a {
+  background-color: #ffc451;
+}
+
+.navbar1 .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar1 .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar1 .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar1 .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar1 .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/* navbar1 */
+
 .navbar {
   padding: 0;
 }
@@ -544,12 +714,13 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 90px 0;
   overflow: hidden;
 }
 
 .section-title {
   padding-bottom: 40px;
+  padding-top: 80px;
 }
 
 .section-title h2 {
@@ -695,41 +866,6 @@ section {
 .team .member .member-img {
   position: relative;
   overflow: hidden;
-}
-
-.team .member .social {
-  position: absolute;
-  left: 0;
-  bottom: 30px;
-  right: 0;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  text-align: center;
-}
-
-.team .member .social a {
-  transition: color 0.3s;
-  color: #151515;
-  margin: 0 3px;
-  border-radius: 4px;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.8);
-  transition: ease-in-out 0.3s;
-  color: #484848;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.team .member .social a:hover {
-  color: #151515;
-  background: #ffc451;
-}
-
-.team .member .social i {
-  font-size: 18px;
-  line-height: 0;
 }
 
 .team .member .member-info {
